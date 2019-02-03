@@ -26,7 +26,7 @@ def post_new(request):
       obj.author = request.user
       obj.thumbnail = request.FILES['photo']
       obj.save()
-      return redirect(post_list(request)) #이거 url함수로 연결해야함
+      return redirect('/') #이거 url함수로 연결해야함
 
   ctx = {
       'form': form,
