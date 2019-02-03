@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+  <head>
+    <title>안뇽</title>
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/pictures.css' %}">
+  </head>
+  <body>
+    <div class="page-header">
+      {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu">+</a>
+      {% endif %}
+      <h1><a href="/">DailyMiseong</a></h1>
+      <img id = "berry" src="{% static 'image/strawberry.png' %}" width=50px>
+    </div>
+    <div class="content container">
+      <div class="row">
+        <div class="col-md-16">
+          {% block content %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
